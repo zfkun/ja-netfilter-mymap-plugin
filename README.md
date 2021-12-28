@@ -4,7 +4,7 @@
 
 #### Use the `mvn clean package` command to compile and use `mymap-v1.0.1-jar-with-dependencies.jar` file!
 
-## Config file
+## Config file: `MyMap.conf`
 
 ```
 [MyMap]

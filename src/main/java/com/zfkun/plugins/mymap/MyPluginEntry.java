@@ -1,24 +1,25 @@
 package com.zfkun.plugins.mymap;
 
 import com.janetfilter.core.Environment;
-import com.janetfilter.core.models.FilterRule;
 import com.janetfilter.core.plugin.MyTransformer;
+import com.janetfilter.core.plugin.PluginConfig;
 import com.janetfilter.core.plugin.PluginEntry;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyPluginEntry implements PluginEntry {
+	private static final String PLUGIN_NAME = "MyMap";
     private final List<MyTransformer> transformers = new ArrayList<>();
 
     @Override
-    public void init(Environment environment, List<FilterRule> filterRules) {
-        transformers.add(new MapTransformer(filterRules));
+    public void init(Environment environment, PluginConfig config) {
+        transformers.add(new MapTransformer(config.getBySection(PLUGIN_NAME)));
     }
 
     @Override
     public String getName() {
-        return "MyMap";
+        return PLUGIN_NAME;
     }
 
     @Override
@@ -28,7 +29,7 @@ public class MyPluginEntry implements PluginEntry {
 
     @Override
     public String getVersion() {
-        return "v1.0.1";
+        return "v1.1.0";
     }
 
     @Override
