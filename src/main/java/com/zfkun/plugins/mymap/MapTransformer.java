@@ -1,7 +1,7 @@
 package com.zfkun.plugins.mymap;
 
-import com.janetfilter.core.models.FilterRule;
 import com.janetfilter.core.plugin.MyTransformer;
+import com.janetfilter.core.plugin.PluginConfig;
 import java.util.Iterator;
 import java.util.List;
 import jdk.internal.org.objectweb.asm.ClassReader;
@@ -15,10 +15,10 @@ import jdk.internal.org.objectweb.asm.tree.VarInsnNode;
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
 
 public class MapTransformer implements MyTransformer {
-    private final List<FilterRule> rules;
+    private final PluginConfig config;
 
-    public MapTransformer(List<FilterRule> rules) {
-        this.rules = rules;
+    public MapTransformer(PluginConfig config) {
+        this.config = config;
     }
 
     public String getHookClassName() {
@@ -26,7 +26,7 @@ public class MapTransformer implements MyTransformer {
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        PutFilter.setRules(this.rules);
+        PutFilter.setRules(this.config);
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
         reader.accept(node, 0);

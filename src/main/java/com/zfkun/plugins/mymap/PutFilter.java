@@ -3,17 +3,18 @@ package com.zfkun.plugins.mymap;
 import com.janetfilter.core.commons.DebugInfo;
 import com.janetfilter.core.enums.RuleType;
 import com.janetfilter.core.models.FilterRule;
+import com.janetfilter.core.plugin.PluginConfig;
+
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 public class PutFilter {
     private static Map<Object, Object> map;
 
-    public static void setRules(List<FilterRule> rules) {
+    public static void setRules(PluginConfig config) {
         map = new HashMap();
-        Iterator var1 = rules.iterator();
+        Iterator<FilterRule> var1 = config.getBySection("MyMap").iterator();
 
         while(var1.hasNext()) {
             FilterRule rule = (FilterRule)var1.next();
