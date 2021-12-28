@@ -4,7 +4,6 @@ import com.janetfilter.core.commons.DebugInfo;
 import com.janetfilter.core.enums.RuleType;
 import com.janetfilter.core.models.FilterRule;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -13,10 +12,8 @@ public class PutFilter {
 
     public static void setRules(List<FilterRule> rules) {
         map = new HashMap();
-        Iterator var1 = rules.iterator();
 
-        while(var1.hasNext()) {
-            FilterRule rule = (FilterRule)var1.next();
+        for (FilterRule rule : rules) {
             if (rule.getType() == RuleType.EQUAL) {
                 String[] sections = rule.getRule().split("->", 2);
                 if (2 != sections.length) {
@@ -32,8 +29,10 @@ public class PutFilter {
     public static Object testPut(Object k, Object v) {
         if (null == k) {
             return v;
+        } else if (map.containsKey(k)) {
+            return map.get(k);
         } else {
-            return map.containsKey(k) ? map.get(k) : v;
+            return v;
         }
     }
 }

@@ -2,7 +2,6 @@ package com.zfkun.plugins.mymap;
 
 import com.janetfilter.core.models.FilterRule;
 import com.janetfilter.core.plugin.MyTransformer;
-import java.util.Iterator;
 import java.util.List;
 import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
@@ -30,10 +29,8 @@ public class MapTransformer implements MyTransformer {
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
         reader.accept(node, 0);
-        Iterator var6 = node.methods.iterator();
 
-        while(var6.hasNext()) {
-            MethodNode mn = (MethodNode)var6.next();
+        for (MethodNode mn : node.methods) {
             if ("put".equals(mn.name) && "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;".equals(mn.desc)) {
                 InsnList list = new InsnList();
                 list.add(new VarInsnNode(ALOAD, 1));
