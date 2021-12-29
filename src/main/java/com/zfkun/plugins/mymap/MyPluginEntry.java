@@ -24,12 +24,12 @@ public class MyPluginEntry implements PluginEntry {
 
     @Override
     public String getAuthor() {
-        return "zfkun";
+        return "jetbra.in";
     }
 
     @Override
     public String getVersion() {
-        return "v1.1.0";
+        return "v1.1.1";
     }
 
     @Override

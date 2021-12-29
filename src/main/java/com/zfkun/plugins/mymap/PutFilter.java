@@ -23,16 +23,10 @@ public class PutFilter {
                 }
             }
         }
-
     }
 
     public static Object testPut(Object k, Object v) {
-        if (null == k) {
-            return v;
-        } else if (map.containsKey(k)) {
-            return map.get(k);
-        } else {
-            return v;
-        }
+        if (null == k) return v;
+        return map.getOrDefault(k, v);
     }
 }
