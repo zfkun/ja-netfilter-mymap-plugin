@@ -12,7 +12,7 @@ This is just a version for myself use
 
 This project base on decompiling from **jetbra.in**, thanks ~
 
-## Config file
+## Config file: `mymap.conf`
 
 ```
 [MyMap]
