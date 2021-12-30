@@ -26,7 +26,7 @@ public class PutFilter {
     }
 
     public static Object testPut(Object k, Object v) {
-        if (null == k) return v;
+        if (k == null) return v;
         return map.getOrDefault(k, v);
     }
 }
