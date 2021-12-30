@@ -28,6 +28,7 @@ public class MapTransformer implements MyTransformer {
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
         PutFilter.setRules(this.rules);
+
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
         reader.accept(node, 0);
@@ -45,6 +46,7 @@ public class MapTransformer implements MyTransformer {
 
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
         node.accept(writer);
+
         return writer.toByteArray();
     }
 }
