@@ -11,7 +11,7 @@ public class PutFilter {
     private static Map<Object, Object> map;
 
     public static void setRules(List<FilterRule> rules) {
-        map = new HashMap();
+        map = new HashMap<>();
 
         for (FilterRule rule : rules) {
             if (rule.getType() == RuleType.EQUAL) {
