@@ -13,7 +13,7 @@
     </properties>
 
     <build>
-        <finalName>mymap-v${project.version}</finalName>
+        <finalName>mymap-v${version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
