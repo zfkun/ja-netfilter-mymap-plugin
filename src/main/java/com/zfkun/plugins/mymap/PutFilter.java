@@ -9,11 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 public class PutFilter {
-    private static Map<Object, Object> map;
+    private static final Map<Object, Object> map = new HashMap<>();
 
     public static void setRules(List<FilterRule> rules) {
-        map = new HashMap<>();
-
         for (FilterRule rule : rules) {
             if (rule.getType() == RuleType.EQUAL) {
                 String[] sections = rule.getRule().split("->", 2);
