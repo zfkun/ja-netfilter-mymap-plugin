@@ -33,7 +33,7 @@ public class MapTransformer implements MyTransformer {
         reader.accept(node, 0);
 
         for (MethodNode mn : node.methods) {
-            if ("put".equals(mn.name) && "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;".equals(mn.desc)) {
+            if (mn.name.equals("put") && mn.desc.equals("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")) {
                 InsnList list = new InsnList();
                 list.add(new VarInsnNode(ALOAD, 1));
                 list.add(new VarInsnNode(ALOAD, 2));
