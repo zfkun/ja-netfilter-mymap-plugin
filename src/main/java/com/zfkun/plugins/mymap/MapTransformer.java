@@ -32,14 +32,14 @@ public class MapTransformer implements MyTransformer {
         ClassNode node = new ClassNode(ASM5);
         reader.accept(node, 0);
 
-        for (MethodNode mn : node.methods) {
-            if (mn.name.equals("put") && mn.desc.equals("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")) {
+        for (MethodNode methodNode : node.methods) {
+            if (methodNode.name.equals("put") && methodNode.desc.equals("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")) {
                 InsnList list = new InsnList();
                 list.add(new VarInsnNode(ALOAD, 1));
                 list.add(new VarInsnNode(ALOAD, 2));
                 list.add(new MethodInsnNode(INVOKESTATIC, "com/zfkun/plugins/mymap/PutFilter", "testPut", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", false));
                 list.add(new VarInsnNode(ASTORE, 2));
-                mn.instructions.insert(list);
+                methodNode.instructions.insert(list);
             }
         }
 
