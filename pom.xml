@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zfkun.plugins</groupId>
-    <artifactId>mymap-plugin</artifactId>
-    <version>1.1.1</version>
+    <artifactId>plugin-mymap</artifactId>
+    <version>1.1.2</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -71,7 +71,7 @@
         <dependency>
             <groupId>io.zhile.research</groupId>
             <artifactId>ja-netfilter</artifactId>
-            <version>2.0.0</version>
+            <version>2.0.1</version>
             <systemPath>${basedir}/libs/ja-netfilter.jar</systemPath>
             <scope>system</scope>
         </dependency>

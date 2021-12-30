@@ -29,7 +29,7 @@ public class MyPluginEntry implements PluginEntry {
 
     @Override
     public String getVersion() {
-        return "v1.1.1";
+        return "v1.1.2";
     }
 
     @Override
