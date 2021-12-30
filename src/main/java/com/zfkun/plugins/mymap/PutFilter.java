@@ -15,7 +15,7 @@ public class PutFilter {
         for (FilterRule rule : rules) {
             if (rule.getType() == RuleType.EQUAL) {
                 String[] sections = rule.getRule().split("->", 2);
-                if (2 != sections.length) {
+                if (sections.length != 2) {
                     DebugInfo.output("Invalid record: " + rule + ", skipped.");
                 } else {
                     map.put(sections[0], sections[1]);
