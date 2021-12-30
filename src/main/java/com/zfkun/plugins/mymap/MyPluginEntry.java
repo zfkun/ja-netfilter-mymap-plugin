@@ -19,7 +19,7 @@ public class MyPluginEntry implements PluginEntry {
 
     @Override
     public String getName() {
-        return "MyMap";
+        return PLUGIN_NAME;
     }
 
     @Override
