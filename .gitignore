@@ -3,3 +3,4 @@
 .DS_Store
 target/
 publish/
+.mvn/wrapper/maven-wrapper.jar
