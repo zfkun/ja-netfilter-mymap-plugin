@@ -17,6 +17,6 @@ This project base on decompiling from **jetbra.in**, thanks ~
 ```
 [MyMap]
 EQUAL,licenseeName->xxxxxxx
-EQUAL,gracePeriodDays->30
+EQUAL,gracePeriodDays->100000
 EQUAL,paidUpTo->5000-12-31
 ```
