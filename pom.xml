@@ -6,7 +6,7 @@
 
     <groupId>com.zfkun.plugins</groupId>
     <artifactId>plugin-mymap</artifactId>
-    <version>1.1.2</version>
+    <version>1.2.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -71,7 +71,7 @@
         <dependency>
             <groupId>com.ja-netfilter</groupId>
             <artifactId>ja-netfilter</artifactId>
-            <version>2.0.1</version>
+            <version>2.2.3</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
